@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>best content girls</title>
+    <title>Best Content Girls</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,6 +25,68 @@
         .video-container {
             margin-bottom: 20px;
         }
+        /* Disclaimer Styles */
+        .disclaimer-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            margin: 50px auto;
+        }
+        .disclaimer-container h1 {
+            color: #ff0000;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .disclaimer-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button.no {
+            background-color: #ff0000;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 18+ Disclaimer -->
+    <div id="disclaimer" class="disclaimer-container">
+        <h1>⚠️ WARNING: 18+ CONTENT ONLY</h1>
+        <p>
+            This website contains adult content and is intended for individuals who are <strong>18 years of age or older</strong>. By accessing this website, you confirm that you are of legal age to view such content in your jurisdiction.
+        </p>
+        <p>
+            If you are under the age of 18 or if adult content is prohibited in your area, please <strong>exit immediately</strong>.
+        </p>
+        <p>
+            The content on this website is for <strong>entertainment purposes only</strong>. By proceeding, you agree to comply with all applicable laws and regulations.
+        </p>
+        <div class="button-container">
+            <a href="https://www.google.com" class="button no">Exit</a>
+            <a href="#" class="button" id="confirmAge">I Am 18+</a>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden by Default) -->
+    <div id="mainContent" class="container" style="display: none;">
+        <h1>Best Content Girls</h1>
+
     </style>
 </head>
 <body>
@@ -152,5 +214,26 @@
         </div>
         
     </div>
+    <script>
+        // Age Verification Logic
+        const disclaimer = document.getElementById('disclaimer');
+        const mainContent = document.getElementById('mainContent');
+        const confirmAgeButton = document.getElementById('confirmAge');
+
+        // Check if the user has already confirmed their age
+        if (localStorage.getItem('ageVerified') === 'true') {
+            disclaimer.style.display = 'none';
+            mainContent.style.display = 'block';
+        }
+
+        // Handle the "I Am 18+" button click
+        confirmAgeButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.setItem('ageVerified', 'true');
+            disclaimer.style.display = 'none';
+            mainContent.style.display = 'block';
+        });
+    </script>
+
 </body>
 </html>
